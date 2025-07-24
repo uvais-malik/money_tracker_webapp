@@ -9,9 +9,11 @@ const dateInput = document.getElementById('date_input');
 const addBtn = document.getElementById('add_btn');
 const expenseTableBody = document.getElementById('expense-table-body');
 const totalAmountCell = document.getElementById('total-amount');
+const form = document.querySelector('.input-section');
 
-// Add expense on button click
-addBtn.addEventListener('click', function() {
+// Add expense on form submission
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
     const category = categorySelect.value;
     const info = infoInput.value;
     const amount = Number(amountInput.value);
